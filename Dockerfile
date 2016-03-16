@@ -10,7 +10,7 @@ RUN [ "apt-get", "-y", "install", "apt-fast"]
 RUN apt-get -y remove python*
 RUN apt-get -y install python3
 RUN apt-get -y install python3-pip
-RUN [ "apt-fast", "install", "-y", "wget","unzip","python-pip-whl", "python-setuptools-whl", "python-six-whl", "python-urllib3-whl", "patch", "pkg-config", "build-essential", "libicu-dev", "software-properties-common", "make", "git", "curl", "php5", "libapache2-mod-php5", "php5-mcrypt", "libpcre3-dev", "php5-mysql", "php5-cli", "php5-gd", "php5-intl", "python", "python-dev", "python-distribute", "python-pip", "cron", "php-pear", "php5-dev", "ssh", "nginx", "libio-socket-ssl-perl", "libnet-ssleay-perl", "sendemail", "php5-curl", "lynx-cur", "php5-json" ]
+RUN [ "apt-fast", "install", "-y", "wget", "unzip","python-pip-whl", "python-setuptools-whl", "python-six-whl", "python-urllib3-whl", "patch", "pkg-config", "build-essential", "libicu-dev", "software-properties-common", "make", "git", "curl", "php5", "libapache2-mod-php5", "php5-mcrypt", "libpcre3-dev", "php5-mysql", "php5-cli", "php5-gd", "php5-intl", "python", "python-dev", "python-distribute", "python-pip", "cron", "php-pear", "php5-dev", "ssh", "nginx", "libio-socket-ssl-perl", "libnet-ssleay-perl", "sendemail", "php5-curl", "lynx-cur", "php5-json" ]
 RUN sudo pecl install channel://pecl.php.net/ZendOpcache-7.0.3
 RUN echo "zend_extension=opcache.so" >> /etc/php5/cli/php.ini
 #RUN apt-add-repository ppa:ondrej/php5 -y
