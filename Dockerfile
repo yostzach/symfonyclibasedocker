@@ -27,10 +27,12 @@ RUN /gpac/configure
 RUN make
 RUN make install
 RUN cp bin/gcc/libgpac.so /usr/lib
-RUN wget https://s3.amazonaws.com/zach-test12346/ccextractor.zip
-RUN unzip ccextractor.zip
-RUN (cd /root/linux && ./build)
-RUN cp /linux/ccextractor /usr/lib/ccextractor
+#RUN wget https://s3.amazonaws.com/zach-test12346/ccextractor.zip
+#RUN unzip ccextractor.zip
+#RUN (cd /root/linux && ./build)
+RUN wget https://s3.amazonaws.com/zach-test12346/ccextractor -O /usr/bin/ccextractor
+RUN chmod +x /usr/bin/ccextractor
+#RUN cp /linux/ccextractor /usr/lib/ccextractor
 
 #Mongo
 RUN pecl install mongo-1.5.7
