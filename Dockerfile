@@ -20,6 +20,14 @@ RUN easy_install supervisor
 RUN sudo apt-get install gcc libicu-dev php5 php5-dev php-pear build-essential --no-install-recommends
 RUN pecl install intl
 
+# Install MP4Box https://github.com/linkthrow/docker-mp4-box/blob/master/Dockerfile
+RUN sudo apt-get install zlib1g-dev -y
+RUN svn co https://svn.code.sf.net/p/gpac/code/trunk/gpac gpac --trust-server-cert --non-interactive
+RUN /gpac/configure
+RUN make
+RUN make install
+RUN cp bin/gcc/libgpac.so /usr/lib
+
 #Mongo
 RUN pecl install mongo-1.5.7
 #NEED TO DO
