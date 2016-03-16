@@ -19,7 +19,7 @@ RUN [ "pip", "install", "pymongo" ]
 RUN easy_install supervisor
 RUN sudo apt-get install gcc libicu-dev php5 php5-dev php-pear build-essential --no-install-recommends
 RUN pecl install intl
-
+RUN sudo apt-get install subversion -y
 # Install MP4Box https://github.com/linkthrow/docker-mp4-box/blob/master/Dockerfile
 RUN sudo apt-get install zlib1g-dev -y
 RUN svn co https://svn.code.sf.net/p/gpac/code/trunk/gpac gpac --trust-server-cert --non-interactive
